@@ -44,52 +44,31 @@ export default function App() {
       <div className="row">
         <div className="col-md-3 mb-4">
           <ProductCard 
-            imageUrl="https://picsum.photos/id/20/300/200"
-            productName="Anvil"
+            imageUrl="src/images/DarkBlueBlouse1.jpg"
+            productName="NavyBlue Blouse"
             price="$50"
           />
         </div>
         <div className="col-md-3 mb-4">
-          <div className="card">
-            <img
-              src="https://picsum.photos/id/1/300/200"
-              className="card-img-top"
-              alt="Product 2"
-            />
-            <div className="card-body">
-              <h5 className="card-title">Product 2</h5>
-              <p className="card-text">$29.99</p>
-              <a href="#" className="btn btn-primary">Add to Cart</a>
-            </div>
-          </div>
+          <ProductCard
+            imageUrl="src/images/PinkBlouse1.jpg"
+            productName="Pink Blouse with Aari designs"
+            price="$60"
+          />
         </div>
         <div className="col-md-3 mb-4">
-          <div className="card">
-            <img
-              src="https://picsum.photos/id/26/300/200"
-              className="card-img-top"
-              alt="Product 3"
-            />
-            <div className="card-body">
-              <h5 className="card-title">Product 3</h5>
-              <p className="card-text">$39.99</p>
-              <a href="#" className="btn btn-primary">Add to Cart</a>
-            </div>
-          </div>
+          <ProductCard
+            imageUrl="src/images/GreenBlouse1.jpg"
+            productName="Green Blouse with peach"
+            price="$40"
+          />
         </div>
         <div className="col-md-3 mb-4">
-          <div className="card">
-            <img
-              src="https://picsum.photos/id/96/300/200"
-              className="card-img-top"
-              alt="Product 4"
+          <ProductCard
+            imageUrl="src/images/PurpleBlouse1.jpg"
+            productName="Purple Blouse with stones"
+            price="$45.50"
             />
-            <div className="card-body">
-              <h5 className="card-title">Product 4</h5>
-              <p className="card-text">$49.99</p>
-              <a href="#" className="btn btn-primary">Add to Cart</a>
-            </div>
-          </div>
         </div>
       </div>
     </main>
