@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 
 export default function Navbar() {
+
+    const [ location ] = useLocation();
 
     const [isNavbarOpened, setNavBarOpen] = useState(false);
 
@@ -27,6 +29,14 @@ export default function Navbar() {
 
     }, []);
 
+    const isActiveLink = (url) => {
+        if (location == url) {
+            return "nav-link active"
+        } else {
+            return "nav-link";
+        }
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,16 +55,16 @@ export default function Navbar() {
                     <div className={`collapse navbar-collapse ${isNavbarOpened ? "show" : ""}`} id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" href="/">Home</Link>
+                                <Link className={`nav-link ${location =="/" ? "active" : ""}`} aria-current="page" href="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="/products">Products</Link>
+                                <Link className={isActiveLink("/products")} href="/products">Products</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="/register">About</Link>
+                                <Link className={isActiveLink("/register")} href="/register">Register</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" href="/cart">Cart</Link>
+                                <Link className={isActiveLink("/cart")} href="/cart">Cart</Link>
                             </li>
                         </ul>
                     </div>
