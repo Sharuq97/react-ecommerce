@@ -4,8 +4,12 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { useLocation } from 'wouter';
+import { useFlashMessage } from './FlashMessageStore';
+
 
 function RegisterPage() {
+
+    const { showMessage } = useFlashMessage();
 
     const validationSchema = Yup.object({
         name: Yup.string().required("Please enter your name"),
@@ -34,12 +38,13 @@ function RegisterPage() {
         try {
           const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
           console.log('Registration successful:', response.data);
-          // Handle successful registration (e.g., show success message, redirect)
+          showMessage('Registration successful!', 'success');
         } catch (error) {
           console.error('Registration failed:', error.response?.data || error.message);
-          // Handle registration error (e.g., show error message)
+          showMessage('Registration failed. Please try again.', 'error');
         } finally {
           formikHelpers.setSubmitting(false);
+          setLocation('/');
         }
       };
 
