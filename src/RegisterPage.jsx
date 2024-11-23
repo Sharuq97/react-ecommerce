@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useState } from 'react';
+
 import { Formik, Field, Form } from 'formik';
+import axios from 'axios';
 import * as Yup from 'yup';
+import { useLocation } from 'wouter';
 
 function RegisterPage() {
 
@@ -24,10 +27,21 @@ function RegisterPage() {
         city: "",
     }
 
-    const handleSubmit = (values, formikHelpers) => {
-        console.log(values);
-        formikHelpers.setSubmitting(false);
-    }
+    const [, setLocation] = useLocation();
+    const [showSuccess, setShowSuccess] = useState(false);
+    
+    const handleSubmit = async (values, formikHelpers) => {
+        try {
+          const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
+          console.log('Registration successful:', response.data);
+          // Handle successful registration (e.g., show success message, redirect)
+        } catch (error) {
+          console.error('Registration failed:', error.response?.data || error.message);
+          // Handle registration error (e.g., show error message)
+        } finally {
+          formikHelpers.setSubmitting(false);
+        }
+      };
 
     return (
         <div className="container mt-5">
