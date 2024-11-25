@@ -1,9 +1,9 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 
 export default function Navbar() {
 
-    const [ location ] = useLocation();
+    const [location] = useLocation();
 
     const [isNavbarOpened, setNavBarOpen] = useState(false);
 
@@ -55,7 +55,7 @@ export default function Navbar() {
                     <div className={`collapse navbar-collapse ${isNavbarOpened ? "show" : ""}`} id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <Link className={`nav-link ${location =="/" ? "active" : ""}`} aria-current="page" href="/">Home</Link>
+                                <Link className={`nav-link ${location == "/" ? "active" : ""}`} aria-current="page" href="/">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className={isActiveLink("/products")} href="/products">Products</Link>
@@ -64,7 +64,9 @@ export default function Navbar() {
                                 <Link className={isActiveLink("/register")} href="/register">Register</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={isActiveLink("/cart")} href="/cart">Cart</Link>
+                                <Link href="/cart" className={`nav-link ${location === '/cart' ? 'active' : ''}`}>
+                                    Cart
+                                </Link>
                             </li>
                         </ul>
                     </div>

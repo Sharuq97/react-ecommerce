@@ -38,13 +38,6 @@ export default function HomePage() {
                             price="$45"
                         />
                     </div>
-                    <div className="col-md-3 mb-4">
-                        <ProductCard
-                            imageUrl="src/images/LightBlueBlouse2.jpg"
-                            productName="Bright Blue Blouse"
-                            price="$48"
-                        />
-                    </div>
                 </div>
             </main>
         </>

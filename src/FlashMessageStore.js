@@ -11,7 +11,6 @@ export const useFlashMessage = () => {
 
     const showMessage = (message, type = 'info') => {
         setFlashMessage({ message, type });
-        console.log("hi");
     };
 
     const clearMessage = () => {

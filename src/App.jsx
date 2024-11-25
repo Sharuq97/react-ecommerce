@@ -8,6 +8,7 @@ import "./styles.css"
 import { useFlashMessage } from './FlashMessageStore';
 
 import { Route, Switch } from 'wouter';
+import ShoppingCart from './ShoppingCart';
 
 
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/" component={HomePage} />
         <Route path="/products" component={ProductPage} />
         <Route path="/register" component={RegisterPage} />
+        <Route path="/cart" component={ShoppingCart} />
       </Switch>
       <Footer />
 

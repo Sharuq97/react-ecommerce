@@ -31,40 +31,37 @@ export default function ProductPage() {
         }
         return jsxElements;
     }
-/*
-            {/*{renderProducts()}}
-            {/*
-                    (() => {
-                        const jsxElements = [];
-                        for (let p of products) {
-                            jsxElements.push(<li key={p.id}>
-                                {p.name} ${p.price}
-                            </li>)
-                        }
-                        return jsxElements;
-                    })()
-                }}
-*/
-    return (<>
-            <h1>Products</h1>
-
-
-
-
+    /*
+                {/*{renderProducts()}}
+                {/*
+                        (() => {
+                            const jsxElements = [];
+                            for (let p of products) {
+                                jsxElements.push(<li key={p.id}>
+                                    {p.name} ${p.price}
+                                </li>)
+                            }
+                            return jsxElements;
+                        })()
+                    }}
+    */
+    return (
+        <div className="container my-5">
+            <h1 className="text-center mb-4">Our Products</h1>
             <div className="row">
-                { products.map(p => 
-                <div className="col-12 col-md-4 col-lg-3" key={p.id}>
-                <ProductCard
-                
-                    productName={p.name}
-                    price={p.price}
-                    imageUrl={p.image}
-                    id={p.id}
-                    description={p.description}
-                    />
+                {products.map(product => (
+                    <div key={product.id} className="col-md-4 mb-4">
+                        <ProductCard
+                            id={product.id}
+                            imageUrl={product.image}
+                            productName={product.name}
+                            price={product.price.toFixed(2)}
+                            description={product.description}
+                            category={product.category}
+                        />
                     </div>
-                )}
-
+                ))}
             </div>
-            </>)
+        </div>
+    );
 }
