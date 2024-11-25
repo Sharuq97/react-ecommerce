@@ -6,7 +6,7 @@ const initialCart = Immutable([
     {
         "id": 1,
         "product_id": 1,
-        "quantity": 10,
+        "quantity": 1,
         "productName": "NavyBlue Blouse",
         "price": 50,
         "imageUrl": "src/images/DarkBlueBlouse1.jpg",
