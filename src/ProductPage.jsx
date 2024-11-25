@@ -7,12 +7,16 @@ export default function ProductPage() {
 
     useEffect(() => {
 
-        const loadData = async () => {
-            const response = await axios.get("products.json");
-            setProducts(response.data);
-        }
-        loadData();
-
+        const fetchProducts = async () => {
+            try {
+              const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/products`);
+              setProducts(response.data);
+            } catch (error) {
+              console.error('Error fetching products:', error);
+            }
+          };
+        
+          fetchProducts();
     }, [])
 
     const renderProductsV2 = () => {
