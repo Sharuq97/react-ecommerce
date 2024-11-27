@@ -12,28 +12,28 @@ export default function HomePage() {
                 <div className="row">
                     <div className="col-md-3 mb-4">
                         <ProductCard
-                            imageUrl="src/images/DarkBlueBlouse1.jpg"
+                            imageUrl="/images/DarkBlueBlouse1.jpg"
                             productName="NavyBlue Blouse"
                             price="$50"
                         />
                     </div>
                     <div className="col-md-3 mb-4">
                         <ProductCard
-                            imageUrl="src/images/PinkBlouse1.jpg"
+                            imageUrl="/images/PinkBlouse1.jpg"
                             productName="Pink Blouse with Aari designs"
                             price="$60"
                         />
                     </div>
                     <div className="col-md-3 mb-4">
                         <ProductCard
-                            imageUrl="src/images/GreenBlouse1.jpg"
+                            imageUrl="/images/GreenBlouse1.jpg"
                             productName="Green Blouse with peach"
                             price="$40"
                         />
                     </div>
                     <div className="col-md-3 mb-4">
                         <ProductCard
-                            imageUrl="src/images/PurpleBlouse1.jpg"
+                            imageUrl="/images/PurpleBlouse1.jpg"
                             productName="Purple Blouse with stones"
                             price="$45"
                         />

@@ -19,22 +19,24 @@ export default function ProductPage() {
           fetchProducts();
     }, [])
 
-    const renderProductsV2 = () => {
-        const jsxElements = products.map(function (p) {
-            return <li key={p.id}>{p.name} ${p.price}</li>
-        })
-        return jsxElements;
-    }
+    // const renderProductsV2 = () => {
+    //     const jsxElements = products.map(function (p) {
+    //         return <li key={p.id}>{p.name} ${p.price}</li>
+    //     })
+    //     return jsxElements;
+    // }
 
-    const renderProducts = () => {
-        const jsxElements = [];
-        for (let p of products) {
-            jsxElements.push(<li key={p.id}>
-                {p.name} ${p.price}
-            </li>);
-        }
-        return jsxElements;
-    }
+    // const renderProducts = () => {
+    //     const jsxElements = [];
+    //     for (let p of products) {
+    //         jsxElements.push(<li key={p.id}>
+    //             {p.name} ${p.price}
+    //         </li>);
+    //     }
+    //     return jsxElements;
+    // }
+
+
     /*
                 {/*{renderProducts()}}
                 {/*
@@ -62,6 +64,7 @@ export default function ProductPage() {
                             price={product.price.toFixed(2)}
                             description={product.description}
                             category={product.category}
+                            product_id= {product.id}
                         />
                     </div>
                 ))}
